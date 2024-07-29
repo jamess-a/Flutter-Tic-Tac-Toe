@@ -1,18 +1,39 @@
 # tic_tac_toe
 
-A new Flutter project.
+Tic_Tac_TOE project.
+Requirement--
 
-## Getting Started
+Moblie emulator for run tic_tac_toe Application 
+https://developer.android.com/studio?hl=th
 
-This project is a starting point for a Flutter application.
+dependencies:
+  flutter:
+    sdk: flutter
+    sqflite: ^2.0.0+4
+    path: ^1.8.0
 
-A few resources to get you started if this is your first Flutter project:
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+    flutter_lints: ^3.0.0
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+                Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Play Tic Tac Toe
+Save and retrieve game data using SQLite
 
-setup project 
+-- Installation step --
+run command 
+-------------------------------------------------------
+git clone https://github.com/jamess-a/tic_tac_toe.git
+cd tic_tac_toe
+-------------------------------------------------------
+or download zip file
+
+-------------------------------------------------------
+flutter pub get
+-------------------------------------------------------
+
+
+Feel free to modify any sections according to your project's specifics and preferences!
+
