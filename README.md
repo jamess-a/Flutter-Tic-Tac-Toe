@@ -1,5 +1,9 @@
 # tic_tac_toe 
 # Pattanasin pluksek CPE
+
+## Game Logic
+- การอธิบาย logic ของเกมเป็นภาษาไทย สามารถดูได้ที่ `lib -> logic_game`
+
 Tic_Tac_TOE project.
 
 ##Requirement
@@ -47,8 +51,6 @@ dev_dependencies:
     ```
 
 Feel free to modify any sections according to your project's specifics and preferences!
-
-Game Logic 
 
 ## Game Logic
 
