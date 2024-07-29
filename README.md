@@ -6,15 +6,13 @@ Tic_Tac_TOE project.
 
 Mobile emulator for running the Tic Tac Toe application:  
 [Android Studio](https://developer.android.com/studio?hl=th)
-
-Flutter
 [Flutter](https://docs.flutter.dev/get-started/install/windows/mobile)
-
 [Dart]
 
 ### Dependencies
 
-Add the following dependencies to your `pubspec.yaml` file:
+Ensure the following dependencies are added to your `pubspec.yaml` file:
+if not add the following dependencies to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
@@ -27,28 +25,25 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+```
 
+## Features
 
+- Play Tic Tac Toe
+- Save and retrieve game data using SQLite
 
+## Installation Steps
 
-Features
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/jamess-a/tic_tac_toe.git
+    cd tic_tac_toe
+    ```
+   Alternatively, you can download the zip file and extract it.
 
-Play Tic Tac Toe
-Save and retrieve game data using SQLite
-
--- Installation step --
-run command
--------------------------------------------------------
-git clone https://github.com/jamess-a/tic_tac_toe.git
-cd tic_tac_toe
--------------------------------------------------------
-or download zip file
-
--------------------------------------------------------
-flutter pub get
--------------------------------------------------------
-
+2. Fetch the dependencies:
+    ```sh
+    flutter pub get
+    ```
 
 Feel free to modify any sections according to your project's specifics and preferences!
-
-```
