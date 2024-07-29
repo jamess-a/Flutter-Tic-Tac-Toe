@@ -31,6 +31,38 @@ CREATE TABLE matches (
 - เก็บ winner ที่ได้จาก game_logic 
 - เก็บ times ที่ได้จาก timestamp 
 
+โดยจะมีการเขียน Read , Create เเละ Delete 
+-Create sql 
+```yaml
+Future<void> insertMatch(Game game, String winner) async {
+    final db = await database;
+    await db.insert(
+      'matches',
+      {
+        'size': game.size,
+        'board': jsonEncode(game.board),
+        'winner': winner,
+        'times': DateTime.now().toString(),
+      },
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+  }
+```
+-Delete sql 
+```yaml
+Future<void> deleteAllMatches() async {
+    final db = await database;
+    await db.delete('matches'); 
+  }
+```
+-Read sql
+```yaml
+Future<List<Map<String, dynamic>>> getMatches() async {
+    final db = await database;
+    return await db.query('matches');
+  }
+```
+
 ### Prototype
 ![xo](https://github.com/user-attachments/assets/a0a6e9ad-458f-4906-8aaf-a8609a167810)
 
