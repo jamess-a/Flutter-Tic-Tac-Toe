@@ -2,7 +2,7 @@
 # Pattanasin pluksek CPE
 
 ## Game Logic
-- การอธิบาย logic ของเกมเป็นภาษาไทย สามารถดูได้ที่ `lib -> logic_game`
+- การอธิบาย logic ของเกมเป็นภาษาไทย สามารถดูได้ที่ `lib -> game_logic.dart`
 
 Tic_Tac_TOE project.
 
