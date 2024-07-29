@@ -31,7 +31,9 @@ CREATE TABLE matches (
 - เก็บ winner ที่ได้จาก game_logic 
 - เก็บ times ที่ได้จาก timestamp 
 
-โดยจะมีการเขียน Read , Create เเละ Delete 
+โดยจะมีการเขียน Read , Create เเละ Delete
+
+
 -Create sql 
 ```yaml
 Future<void> insertMatch(Game game, String winner) async {
