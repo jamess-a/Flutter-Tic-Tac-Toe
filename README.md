@@ -27,7 +27,16 @@ CREATE TABLE matches (
           )
 ```
 - เก็บ size ของ board ที่ผู้ใช้เลือก
-- เก็บ board ที่ผู้ใช้ได้เล่น [row][column]
+- เก็บ board ที่ผู้ใช้ได้เล่น ตัวอย่าง json
+```yaml
+{
+  "size": 3,
+  "board": "[[\"X\",\"O\",\"X\"],[\"O\",\"X\",null],[null,\"O\",\"X\"]]",
+  "winner": "X",
+  "times": "2024-07-29T12:34:56.789Z"
+}
+```          
+  
 - เก็บ winner ที่ได้จาก game_logic 
 - เก็บ times ที่ได้จาก timestamp 
 
