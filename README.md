@@ -31,6 +31,9 @@ CREATE TABLE matches (
 - เก็บ winner ที่ได้จาก game_logic 
 - เก็บ times ที่ได้จาก timestamp 
 
+### Prototype
+![xo](https://github.com/user-attachments/assets/a0a6e9ad-458f-4906-8aaf-a8609a167810)
+
 ### Requirement
 
 Mobile emulator for running the Tic Tac Toe application:  
