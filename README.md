@@ -47,3 +47,4 @@ dev_dependencies:
     ```
 
 Feel free to modify any sections according to your project's specifics and preferences!
+By Pattanasin pluksek CPE
