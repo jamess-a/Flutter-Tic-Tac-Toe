@@ -1,5 +1,5 @@
-# tic_tac_toe
-
+# tic_tac_toe 
+# Pattanasin pluksek CPE
 Tic_Tac_TOE project.
 
 ##Requirement
@@ -47,56 +47,50 @@ dev_dependencies:
     ```
 
 Feel free to modify any sections according to your project's specifics and preferences!
-By Pattanasin pluksek CPE
 
+Game Logic 
 
-Game Logic
-makeMove(int row, int col)
-ฟังก์ชันนี้ใช้สำหรับการเดินหมากในกระดาน:
+## Game Logic
 
-parameter:
+### `bool makeMove(int row, int col)`
 
-row: แถวที่ต้องการเดินหมาก
-col: คอลัมน์ที่ต้องการเดินหมาก
-การทำงาน:
+This function handles making a move on the game board:
 
-ตรวจสอบว่าช่องที่ระบุ (board[row][col]) ไม่ว่าง (ไม่เป็น null)
-ถ้าช่องนั้นไม่ว่าง: คืนค่า false และไม่ทำการเปลี่ยนแปลงใด ๆ
-ถ้าช่องว่าง (null):
-วางหมากของผู้เล่นปัจจุบันในช่องนั้น
-เปลี่ยนผู้เล่นปัจจุบัน (จาก 'X' เป็น 'O' หรือจาก 'O' เป็น 'X')
-คืนค่า true เพื่อบอกว่าการเดินหมากสำเร็จ
-checkWinner()
-ฟังก์ชันนี้ใช้เพื่อตรวจสอบผู้ชนะของเกม:
+- **Parameters**:
+  - `row`: The row index where the move is made
+  - `col`: The column index where the move is made
 
-การตรวจสอบแถว (Rows)
-การทำงาน:
-วนลูปผ่านทุกแถว (for (int i = 0; i < size; i++))
-ใช้ .every เพื่อตรวจสอบว่า:
-ทุกช่องในแถวนั้นมีค่าเหมือนกัน (cell == board[i][0])
-ทุกช่องไม่เป็น null
-ถ้าเงื่อนไขนี้เป็นจริง: คืนค่าผู้เล่นที่ชนะในแถวนั้น (return board[i][0])
-การตรวจสอบคอลัมน์ (Columns)
-การทำงาน:
-วนลูปผ่านทุกคอลัมน์ (for (int i = 0; i < size; i++))
-ใช้ .every เพื่อตรวจสอบว่า:
-ทุกแถวมีค่าของช่องในคอลัมน์นั้นเหมือนกัน (row[i] == board[0][i])
-ทุกช่องไม่เป็น null
-ถ้าเงื่อนไขนี้เป็นจริง: คืนค่าผู้เล่นที่ชนะในคอลัมน์นั้น (return board[0][i])
-การตรวจสอบแนวทแยง (Diagonals)
-การทำงาน:
-แนวทแยงหลัก (จากบนซ้ายไปล่างขวา):
-ใช้ .every เพื่อตรวจสอบว่า:
-ทุกช่องในแนวทแยงหลักมีค่าเหมือนกัน (row[board.indexOf(row)] == board[0][0])
-ทุกช่องไม่เป็น null
-ถ้าเงื่อนไขนี้เป็นจริง: คืนค่าผู้เล่นที่ชนะในแนวทแยงหลัก (return board[0][0])
-แนวทแยงรอง (จากบนขวาไปล่างซ้าย):
-ใช้ .every เพื่อตรวจสอบว่า:
-ทุกช่องในแนวทแยงรองมีค่าเหมือนกัน (row[size - 1 - board.indexOf(row)] == board[0][size - 1])
-ทุกช่องไม่เป็น null
-ถ้าเงื่อนไขนี้เป็นจริง: คืนค่าผู้เล่นที่ชนะในแนวทแยงรอง (return board[0][size - 1])
-การตรวจสอบกระดานเต็ม (Full Table)
-การทำงาน:
-ใช้ .every เพื่อตรวจสอบว่า:
-ทุกช่องในกระดานไม่เป็น null (แสดงว่ากระดานเต็ม)
-ถ้ากระดานเต็ม: คืนค่า 'Draw'
+- **Behavior**:
+  - **Check if Cell is Occupied**:
+    - If the cell at `board[row][col]` is not `null`, the function returns `false` and does nothing.
+  - **Make the Move**:
+    - If the cell is `null`, place the current player's marker (`currentPlayer`) in that cell.
+    - Switch the current player from 'X' to 'O' or from 'O' to 'X'.
+    - Return `true` to indicate that the move was successfully made.
+
+### `String? checkWinner()`
+
+This function checks if there is a winner or if the game is a draw:
+
+- **Row Check**:
+  - Loop through each row with `for (int i = 0; i < size; i++)`.
+  - Use `.every` to verify if all cells in the row are equal to `board[i][0]` and none of them are `null`.
+  - If the condition is true, return the player who won in that row (`return board[i][0]`).
+
+- **Column Check**:
+  - Loop through each column with `for (int i = 0; i < size; i++)`.
+  - Use `.every` to verify if all cells in the column are equal to `board[0][i]` and none of them are `null`.
+  - If the condition is true, return the player who won in that column (`return board[0][i]`).
+
+- **Diagonal Check**:
+  - **Primary Diagonal (Top-Left to Bottom-Right)**:
+    - Use `.every` to verify if all cells in the primary diagonal are equal to `board[0][0]` and none of them are `null`.
+    - If the condition is true, return the player who won in the primary diagonal (`return board[0][0]`).
+  - **Secondary Diagonal (Top-Right to Bottom-Left)**:
+    - Use `.every` to verify if all cells in the secondary diagonal are equal to `board[0][size - 1]` and none of them are `null`.
+    - If the condition is true, return the player who won in the secondary diagonal (`return board[0][size - 1]`).
+
+- **Full Board Check**:
+  - Use `.every` to check if all cells in the board are not `null` (indicating the board is full).
+  - If the board is full and there is no winner, return `'Draw'`.
+
