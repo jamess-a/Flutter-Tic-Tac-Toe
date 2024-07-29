@@ -1,4 +1,3 @@
-# tic_tac_toe 
 # Pattanasin pluksek CPE
 
 ## Game Logic
@@ -6,7 +5,33 @@
 
 Tic_Tac_TOE project.
 
-##Requirement
+### Design font-end 
+ในการ ออกเเบบหน้าเเอปพลิเคชั่นจะให้เหมือนกับเล่นเกมโทรศัพท์ เปิดเเล้วสามารถเริ่มเล่นได้เลยเเละไม่สับซ้อน 
+- Home จะเป็น หน้าหลักมี กระดานกับ ปุ่มเรียก history
+- History จะเป็น list ของ history ที่เรียกจาก database
+- Reply Match จะเป็นการ Read กระดานกับรายละเอียดต่างๆมา
+
+
+โดยจะจัดให้ board ที่เป็นกระดานหลักอยู่กลางๆ เเละมี ปุ่ม restart เพื่อ clear board
+
+### Design back-end 
+ในส่วนของหลังบ้านอยากจะทำให้เรียบง่ายไม่ติด Normalization ทำให้มีเพียง 1 table คือ matches1.db -> matches 
+โดยใช้ คำสั่ง sql 
+```yaml
+CREATE TABLE matches (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            size INTEGER,
+            board TEXT,
+            winner TEXT,
+            times timestamp default current_timestamp
+          )
+```
+- เก็บ size ของ board ที่ผู้ใช้เลือก
+- เก็บ board ที่ผู้ใช้ได้เล่น [row][column]
+- เก็บ winner ที่ได้จาก game_logic 
+- เก็บ times ที่ได้จาก timestamp 
+
+### Requirement
 
 Mobile emulator for running the Tic Tac Toe application:  
 [Android Studio](https://developer.android.com/studio?hl=th)

@@ -80,7 +80,7 @@ class ReplayMatch extends StatelessWidget {
                   int col = index % size;
                   return Container(
                     margin: EdgeInsets.all(4.0),
-                    color: _getCellColor(row, col), // ใช้ฟังก์ชันเพื่อกำหนดสี
+                    color: _getCellColor(row, col), 
                     child: Center(
                       child: Text(
                         board[row][col] ?? '',
