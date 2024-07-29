@@ -50,6 +50,7 @@ Feel free to modify any sections according to your project's specifics and prefe
 By Pattanasin pluksek CPE
 
 
+Game Logic 
 
 bool makeMove(int row, int col) {
   if (board[row][col] != null) return false;
