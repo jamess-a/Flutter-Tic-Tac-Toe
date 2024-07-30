@@ -15,6 +15,7 @@ Tic_Tac_Toe project.
 โดยจะจัดให้ board ที่เป็นกระดานหลักอยู่กลางๆ เเละมี ปุ่ม restart เพื่อ clear board
 
 ### Design back-end 
+- จะเป็น Localdatabase sqlite 
 ในส่วนของหลังบ้านอยากจะทำให้เรียบง่ายไม่ติด Normalization ทำให้มีเพียง 1 table คือ matches1.db -> matches 
 โดยใช้ คำสั่ง sql 
 ```yaml
