@@ -37,33 +37,7 @@ class _TicTacToeAppState extends State<TicTacToeApp> {
       await dbHelper.insertMatch(game, winner!);
     }
   }
-
-  Widget buildCell(int row, int col) {
-    return GestureDetector(
-      onTap: () {
-        if (winner == null && game.makeMove(row, col)) {
-          setState(() {
-            winner = game.checkWinner();
-            if (winner != null) saveMatch();
-          });
-        }
-      },
-      child: Container(
-        margin: const EdgeInsets.all(4.0),
-        decoration: BoxDecoration(
-          color: Colors.blue[200],
-          borderRadius: BorderRadius.circular(12.0), // มุมโค้งของแต่ละเซลล์
-        ),
-        child: Center(
-          child: Text(
-            game.board[row][col] ?? '',
-            style: const TextStyle(fontSize: 32.0),
-          ),
-        ),
-      ),
-    );
-  }
-
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

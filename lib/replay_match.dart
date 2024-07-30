@@ -17,10 +17,14 @@ class ReplayMatch extends StatelessWidget {
   Color _getCellColor(int row, int col) {
     if (winner == 'X') {
       // เปลี่ยนสีของเซลล์ที่เป็นผู้ชนะ (ถ้า 'X' เป็นผู้ชนะ)
-      return board[row][col] == 'X' ? Colors.green : Color.fromARGB(255, 248, 219, 121);
+      return board[row][col] == 'X'
+          ? Colors.green
+          : Color.fromARGB(255, 248, 219, 121);
     } else if (winner == 'O') {
       // เปลี่ยนสีของเซลล์ที่เป็นผู้ชนะ (ถ้า 'O' เป็นผู้ชนะ)
-      return board[row][col] == 'O' ? Colors.red : Color.fromARGB(255, 248, 219, 121);
+      return board[row][col] == 'O'
+          ? Colors.red
+          : Color.fromARGB(255, 248, 219, 121);
     } else {
       // สีปกติ
       return Color.fromARGB(255, 248, 219, 121);
@@ -79,12 +83,15 @@ class ReplayMatch extends StatelessWidget {
                   int row = index ~/ size;
                   int col = index % size;
                   return Container(
-                    margin: EdgeInsets.all(4.0),
-                    color: _getCellColor(row, col), 
+                    margin: const EdgeInsets.all(4.0),
+                    decoration: BoxDecoration(
+                      color: _getCellColor(row, col),
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
                     child: Center(
                       child: Text(
                         board[row][col] ?? '',
-                        style: TextStyle(fontSize: 32.0),
+                        style: const TextStyle(fontSize: 32.0),
                       ),
                     ),
                   );

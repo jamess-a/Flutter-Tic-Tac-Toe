@@ -16,12 +16,12 @@ class Game {
   String? checkWinner() {
     for (int i = 0; i < size; i++) {
       if (board[i].every((cell) => cell == board[i][0] && cell != null)) {
-        return board[i][0];
+        return board[i][0];//return the player who won
       }
       if (board.every((row) => row[i] == board[0][i] && row[i] != null)) {
-        return board[0][i];
+        return board[0][i];// return the player who won
       }
-    }
+    }    
     if (board.every((row) => row[board.indexOf(row)] == board[0][0] && row[board.indexOf(row)] != null)) {
       return board[0][0];
     }
