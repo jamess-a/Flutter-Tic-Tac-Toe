@@ -63,17 +63,31 @@ class MatchHistory extends StatelessWidget {
               final winner = match['winner'];
               final timestamp = match['times'];
 
+              Color _getCellColor(String winner) {
+                if (winner == 'X') {
+                  return winner == 'X'
+                      ? Colors.green
+                      : Color.fromARGB(255, 255, 255, 255);
+                } else if (winner == 'O') {
+                  return winner == 'O'
+                      ? Colors.red
+                      : Color.fromARGB(255, 255, 255, 255);
+                } else {
+                  return Color.fromARGB(255, 255, 255, 255);
+                }
+              }
+
               return Container(
                 margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: _getCellColor(winner),
                   borderRadius: BorderRadius.circular(12.0),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.2),
                       spreadRadius: 2,
                       blurRadius: 5,
-                      offset: Offset(0, 3), 
+                      offset: Offset(0, 3),
                     ),
                   ],
                 ),

@@ -129,7 +129,36 @@ class _HomeScreenState extends State<HomeScreen> {
         if (winner == null && game.makeMove(row, col)) {
           setState(() {
             winner = game.checkWinner();
-            if (winner != null) saveMatch();
+            if (winner != null) {
+              saveMatch();
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Center(
+                      child: Text(
+                          winner == 'Draw' ? 'It\'s a Draw!' : '$winner Wins!'),
+                    ),
+                    content: const Text(
+                      textAlign: TextAlign.center,
+                      'Match saved successfully!',
+                    ),
+                    actions: <Widget>[
+                      TextButton(
+                        child: const Text(
+                          "Restart",
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                        onPressed: () {
+                          resetGame(boardSize);
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  );
+                },
+              );
+            }
           });
         }
       },
@@ -137,12 +166,12 @@ class _HomeScreenState extends State<HomeScreen> {
         margin: const EdgeInsets.all(4.0),
         decoration: BoxDecoration(
           color: Colors.blue[200],
-          borderRadius: BorderRadius.circular(12.0), // มุมโค้งของแต่ละเซลล์
+          borderRadius: BorderRadius.circular(12.0),
         ),
         child: Center(
           child: Text(
             game.board[row][col] ?? '',
-            style:const TextStyle(fontSize: 32.0),
+            style: const TextStyle(fontSize: 32.0),
           ),
         ),
       ),
@@ -175,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 value: size,
                 child: Text(
                   '$size x $size',
-                  style:const TextStyle(fontSize: 24.0),
+                  style: const TextStyle(fontSize: 24.0),
                 ),
               );
             }).toList(),
@@ -208,9 +237,30 @@ class _HomeScreenState extends State<HomeScreen> {
           if (winner != null)
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Text(
-                winner == 'Draw' ? 'It\'s a Draw!' : '$winner Wins!',
-                style: const TextStyle(fontSize: 24.0),
+              child: Container(
+                child: Center(
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.all(16.0),
+                        height: 50,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          color: Colors.blue[200],
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        child: Center(
+                          child: Text(
+                            winner == 'Draw'
+                                ? 'It\'s a Draw!'
+                                : '$winner Wins!',
+                            style: const TextStyle(fontSize: 24.0),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           Padding(
