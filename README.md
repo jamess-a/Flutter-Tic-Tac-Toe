@@ -5,7 +5,7 @@
 
 Tic_Tac_Toe project.
 
-### Design font-end 
+### Design front-end 
 ในการ ออกเเบบหน้าเเอปพลิเคชั่นจะให้เหมือนกับเล่นเกมโทรศัพท์ เปิดเเล้วสามารถเริ่มเล่นได้เลยเเละไม่ซับซ้อน 
 - main.dart จะเป็น หน้าหลักมี กระดานกับ ปุ่มเรียก history
 - match_history.dart จะเป็น list ของ history ที่เรียกจาก database
